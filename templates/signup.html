@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>New User Sign Up</title>
+        <style>
+            .error { color: red; }
+        </style>
     </head>
 <body>
+        <title>New User Sign Up</title>
     <form action="/signup" method='post'>
         <label for="user-name">Username:</label>
-            <input type="text" name="user_name" />
-        </form>
-        <br>
-        <form action="/signup" method='post'>
+            <input type="text" name="user_name" value='{{user_name}}' />
+        <p class="error">{{username_error}}</p>
         <label for="user-pw">Password:</label>
-            <input type="password" name="user_pw" />
-        </form>
-        <br>
-        <form action="/signup" method='post'>
+            <input type="password" name="user_pw" value='{{user_pw}}'/>
+        <p class="error">{{userpw_error}}</p>
         <label for="verify-pw">Password:</label>
-            <input type="password" name="verify_pw" />
-        </form>
-        <br>
-        <form action="/signup" method='post'>
+            <input type="password" name="verify_pw" value='{{verify_pw}}' />
+        <p class="error">{{verifypw_error}}</p>
         <label for="user-emai">Email(optional):</label>
-            <input type="text" name="user_email" />
-            <input type="Submit" />
+            <input type="text" name="user_email" value='{{user_email}}' />
+        <p class="error">{{useremail_error}}</p>
+            <input type="Submit" value="Validate"/>
         </form>
 </body>
 </html>
