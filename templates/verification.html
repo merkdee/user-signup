@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .error { color: red; }
+        </style>
+        <title>User Verification</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+            <h1>New User Sign Up</h1>
+        <form method='post'>
+            <table>
+                <tr>
+                    <td><label for="user-name">Username:</label></td>
+                    <td>
+                        <input type="text" name="user_name" required value='{{user_name}}' />
+                        <span class="error">{{username_error}}</span>
+                    </td>
+                </tr>
+                    <td><label for="user-pw">Password:</label></td>
+                    <td>
+                        <input type="password" name="user_pw" required value='{{user_pw}}'/>
+                        <span class="error">{{userpw_error}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="verify-pw">Verify Password:</label></td>
+                    <td>
+                        <input type="password" name="verify_pw" required value='{{verify_pw}}' />
+                        <span class="error">{{verifypw_error}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="user-emai">Email(optional):</label></td>
+                    <td>
+                        <input type="text" name="user_email" value='{{user_email}}' />
+                        <span class="error">{{useremail_error}}</span>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Validate">
+        </form>
+    </body>
+</html>
