@@ -87,8 +87,8 @@ def user_valid():
 
 @app.route("/welcome")
 def user_hello():
-    user_name = request.args.get('user_name')
-    return '<h1> Welcome, {0}!</h1>'.format(user_name)
+    user_name = request.args.get('username')
+    return render_template('welcome.html', user_name=user_name)
 
 
 app.run()
