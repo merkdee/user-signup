@@ -76,13 +76,13 @@ def user_valid():
         if len(user_email) < 1:
             pass
 
-    if username_error and userpw_error and useremail_error:
-        return render_template('verification.html', username_error=username_error, userpw_error=userpw_error,
-            verifypw_error=verifypw_error, useremail_error=useremail_error,user_name=user_name, user_pw=user_pw,verify_pw=verify_pw,user_email=user_email)
+    if not username_error and not userpw_error and not useremail_error:
+        return redirect('/welcome?username={0}'.format(user_name))
 
     else:
-        if not username_error and not userpw_error and not useremail_error:
-            return redirect('/welcome?username={0}'.format(user_name))
+        if username_error and userpw_error and useremail_error:
+            return render_template('verification.html', username_error=username_error, userpw_error=userpw_error,
+            verifypw_error=verifypw_error, useremail_error=useremail_error,user_name=user_name, user_pw=user_pw,verify_pw=verify_pw,user_email=user_email)
 
 
 @app.route("/welcome")
