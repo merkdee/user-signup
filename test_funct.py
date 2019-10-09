@@ -79,7 +79,7 @@ def user_valid():
             user_email = ''
 
     if not username_error and not userpw_error and not useremail_error:
-        return redirect('welcome.html')
+        return redirect('/welcome?username={0}'.format(user_name))
 
     else:
         if username_error and userpw_error and useremail_error:
